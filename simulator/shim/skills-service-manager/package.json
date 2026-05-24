@@ -1,0 +1,7 @@
+{
+  "name": "skills-service-manager",
+  "version": "14.2.9-shim1",
+  "description": "Compatibility shim that re-exports SSM 14.2.9 with the older SSM 10 API surface that simulator/client.js was bundled against",
+  "main": "index.js",
+  "private": true
+}

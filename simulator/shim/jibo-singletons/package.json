@@ -1,0 +1,7 @@
+{
+  "name": "jibo-singletons",
+  "version": "0.2.1-stub",
+  "description": "Minimal stub of jibo-singletons.enforceSingleton",
+  "main": "index.js",
+  "private": true
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Jibo Simulator</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/client.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css"/>
+</head>
+<body>
+    <div id="toolbar" class="tools"></div>
+    <div id="container">
+        <div id="visualizer"></div>
+        <div id="face" class="loading">
+            <div id="faceContent">
+                <div id="loader"></div>
+                <div id="notifications"></div>
+                <!--
+                    partition: fresh name avoids stale failed-load cache from prior runs.
+                    webpreferences: nodeIntegration required so Be can require('jibo').
+                -->
+                <webview id="skill"
+                    partition="persist:jibo-skill-v2"
+                    style="position: absolute; display: inline-flex; width: 1280px; height: 720px;"
+                    autosize="on"
+                    webpreferences="contextIsolation=no,nodeIntegration=yes,nodeIntegrationInSubFrames=yes,sandbox=no,webSecurity=no,allowFileAccessFromFiles=yes,allowRunningInsecureContent=yes"
+                    allowpopups="on"
+                    width="1280"
+                    height="720"
+                    minwidth="1280"
+                    maxwidth="1280"
+                    minheight="720"
+                    maxheight="720"
+                    >
+                </webview>
+            </div>
+        </div>
+    </div>
+    <div id="sidebar"></div>
+    <script>
+        global.realThree = true;
+        require('./client');
+
+        // Webview diagnostics + IPC bridge for guests that use sendToHost.
+        (function attachWebviewHelpers() {
+            const { ipcRenderer } = require('electron');
+            const wv = document.getElementById('skill');
+            if (!wv) return;
+
+            wv.addEventListener('did-fail-load', (e) => {
+                console.error('[webview fail]', e.errorCode, e.errorDescription, e.validatedURL);
+            });
+            wv.addEventListener('did-finish-load', () => {
+                console.log('[webview ok]', wv.getURL && wv.getURL());
+            });
+            wv.addEventListener('console-message', (e) => {
+                console.log('[webview console]', e.message);
+            });
+            wv.addEventListener('ipc-message', (e) => {
+                if (e.channel === 'get-context') {
+                    ipcRenderer.send('get-context-forward');
+                }
+            });
+        })();
+
+        // Click Jibo's head in the 3D view to drive the six capacitive head pads
+        // (hold to stop / head-pat reactions), same as on-robot touch sensors.
+        (function attachHeadTouchSimulation() {
+            const au = require('animation-utilities');
+            const SSM = require('skills-service-manager');
+            const THREE = au.THREE;
+            const MCW = au.MouseCoordinateWrangler;
+            const container = document.getElementById('container');
+            const viz = document.getElementById('visualizer');
+            if (!container || !viz) return;
+
+            let activePads = null;
+
+            function isMesh(obj) {
+                return obj && obj.geometry && obj.material;
+            }
+
+            function bodyScene(robot) {
+                if (!robot) return null;
+                if (robot.bodyScene) return robot.bodyScene;
+                const scene = robot.scene;
+                if (!scene) return null;
+                return scene.getScene ? scene.getScene() : scene._scene;
+            }
+
+            function pushPadState(padState) {
+                const bs = SSM.BodyService && SSM.BodyService.instance;
+                if (bs && typeof bs.simulateTouchState === 'function') {
+                    bs.simulateTouchState({ pad_state: padState });
+                }
+            }
+
+            function expandBounds(min, max, v) {
+                min.x = Math.min(min.x, v.x);
+                min.y = Math.min(min.y, v.y);
+                min.z = Math.min(min.z, v.z);
+                max.x = Math.max(max.x, v.x);
+                max.y = Math.max(max.y, v.y);
+                max.z = Math.max(max.z, v.z);
+            }
+
+            function meshWorldBounds(mesh) {
+                if (!mesh.geometry.boundingBox) {
+                    mesh.geometry.computeBoundingBox();
+                }
+                const bb = mesh.geometry.boundingBox;
+                const min = new THREE.Vector3(Infinity, Infinity, Infinity);
+                const max = new THREE.Vector3(-Infinity, -Infinity, -Infinity);
+                const corners = [
+                    new THREE.Vector3(bb.min.x, bb.min.y, bb.min.z),
+                    new THREE.Vector3(bb.max.x, bb.min.y, bb.min.z),
+                    new THREE.Vector3(bb.min.x, bb.max.y, bb.min.z),
+                    new THREE.Vector3(bb.max.x, bb.max.y, bb.min.z),
+                    new THREE.Vector3(bb.min.x, bb.min.y, bb.max.z),
+                    new THREE.Vector3(bb.max.x, bb.min.y, bb.max.z),
+                    new THREE.Vector3(bb.min.x, bb.max.y, bb.max.z),
+                    new THREE.Vector3(bb.max.x, bb.max.y, bb.max.z)
+                ];
+                for (let i = 0; i < corners.length; i++) {
+                    mesh.localToWorld(corners[i]);
+                    expandBounds(min, max, corners[i]);
+                }
+                return { min, max };
+            }
+
+            function padFromHit(hit) {
+                const mesh = hit.object;
+                const local = hit.point.clone();
+                const inv = new THREE.Matrix4().getInverse(mesh.matrixWorld);
+                local.applyMatrix4(inv);
+                const bb = mesh.geometry.boundingBox;
+                const midX = (bb.min.x + bb.max.x) * 0.5;
+                const relY = (local.y - bb.min.y) / (bb.max.y - bb.min.y || 1);
+                const row = relY > 0.66 ? 0 : relY > 0.33 ? 1 : 2;
+                const pads = [false, false, false, false, false, false];
+                pads[row] = true;
+                pads[row + 3] = true;
+                const spanX = bb.max.x - bb.min.x;
+                if (local.x < midX - spanX * 0.15) {
+                    pads[row + 3] = false;
+                } else if (local.x > midX + spanX * 0.15) {
+                    pads[row] = false;
+                }
+                return pads;
+            }
+
+            function headMeshes(robot) {
+                const meshes = [];
+                const seen = {};
+                const scene = bodyScene(robot);
+                if (!scene) return meshes;
+                const add = (obj) => {
+                    if (isMesh(obj) && !seen[obj.id]) {
+                        seen[obj.id] = true;
+                        meshes.push(obj);
+                    }
+                };
+                const collect = (root) => {
+                    if (!root) return;
+                    root.traverse(add);
+                };
+                collect(scene.getObjectByName('headMeshMesh'));
+                collect(scene.getObjectByName('headMesh'));
+                if (!meshes.length) {
+                    scene.traverse((obj) => {
+                        if (isMesh(obj) && obj.name && /head/i.test(obj.name)) add(obj);
+                    });
+                }
+                return meshes;
+            }
+
+            function clickInFaceQuad(event) {
+                const info = window.__jiboSimFaceQuad;
+                if (!info || info.behind || !info.corners || info.corners.length !== 4) return false;
+                const px = event.clientX;
+                const py = event.clientY;
+                const quad = info.corners;
+                function cross(a, b, c) {
+                    return (a.x - c.x) * (b.y - c.y) - (b.x - c.x) * (a.y - c.y);
+                }
+                const p = { x: px, y: py };
+                const signs = [
+                    cross(p, quad[0], quad[1]),
+                    cross(p, quad[1], quad[2]),
+                    cross(p, quad[2], quad[3]),
+                    cross(p, quad[3], quad[0])
+                ];
+                const pos = signs[0] >= 0;
+                return signs.every(s => (s >= 0) === pos);
+            }
+
+            function pickHead(event) {
+                const robot = window.__jiboSimRobot;
+                if (!robot || !robot.scene) return null;
+                const camera = robot.scene.getCamera && robot.scene.getCamera();
+                if (!camera) return null;
+                const meshes = headMeshes(robot);
+                if (!meshes.length) return null;
+                const ndc = MCW.getLocalCoordinatesNDCCentered(event, viz);
+                if (THREE.Raycaster && THREE.Vector2) {
+                    const raycaster = new THREE.Raycaster();
+                    raycaster.setFromCamera(new THREE.Vector2(ndc.x, ndc.y), camera);
+                    const hits = raycaster.intersectObjects(meshes, true);
+                    if (hits.length) return hits[0];
+                }
+                // r70 NDC z is 0 (near) to 1 (far), not -1..1
+                const origin = new THREE.Vector3(ndc.x, ndc.y, 0).unproject(camera);
+                const far = new THREE.Vector3(ndc.x, ndc.y, 1).unproject(camera);
+                const direction = far.sub(origin).normalize();
+                let best = null;
+                let bestT = Infinity;
+                for (let i = 0; i < meshes.length; i++) {
+                    const mesh = meshes[i];
+                    mesh.updateMatrixWorld(true);
+                    const bounds = meshWorldBounds(mesh);
+                    const point = rayHitAabb(origin, direction, bounds.min, bounds.max);
+                    if (!point) continue;
+                    const t = point.distanceTo(origin);
+                    if (t < bestT) {
+                        bestT = t;
+                        best = { point, object: mesh };
+                    }
+                }
+                return best;
+            }
+
+            function rayHitAabb(origin, direction, min, max) {
+                let tmin = -Infinity;
+                let tmax = Infinity;
+                const axes = ['x', 'y', 'z'];
+                for (let i = 0; i < axes.length; i++) {
+                    const axis = axes[i];
+                    const o = origin[axis];
+                    const d = direction[axis];
+                    if (Math.abs(d) < 1e-8) {
+                        if (o < min[axis] || o > max[axis]) return null;
+                        continue;
+                    }
+                    let t1 = (min[axis] - o) / d;
+                    let t2 = (max[axis] - o) / d;
+                    if (t1 > t2) { const tmp = t1; t1 = t2; t2 = tmp; }
+                    tmin = Math.max(tmin, t1);
+                    tmax = Math.min(tmax, t2);
+                    if (tmin > tmax) return null;
+                }
+                if (tmax < 0) return null;
+                const t = tmin >= 0 ? tmin : tmax;
+                return origin.clone().add(direction.clone().multiplyScalar(t));
+            }
+
+            function modifierHeld(e) {
+                return e.shiftKey || e.ctrlKey || e.altKey || e.metaKey;
+            }
+
+            function onHeadDown(e) {
+                if (e.button !== 0 || modifierHeld(e)) return;
+                if (!container.classList.contains('view3d')) return;
+                if (window.__jiboSimMode === 'audio') return;
+                if (clickInFaceQuad(e)) return;
+                const hit = pickHead(e);
+                if (!hit) return;
+                activePads = padFromHit(hit);
+                pushPadState(activePads);
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            function releaseHeadTouch() {
+                if (!activePads) return;
+                activePads = null;
+                pushPadState([false, false, false, false, false, false]);
+            }
+
+            container.addEventListener('mousedown', onHeadDown, true);
+            document.addEventListener('mouseup', releaseHeadTouch, true);
+            window.addEventListener('blur', releaseHeadTouch);
+        })();
+
+        // 3D view warps #face with matrix3d; Electron <webview> hit-testing does not
+        // follow the warp, so taps on Jibo's eye miss Be's HammerJS canvas. Project
+        // screen clicks onto the face quad and spoof a tap inside the skill webview.
+        (function attach3DTapForwarder() {
+            const FACE_W = 1280;
+            const FACE_H = 720;
+            const container = document.getElementById('container');
+            const wv = document.getElementById('skill');
+            if (!container || !wv) return;
+
+            function bilinear(quad, u, v) {
+                const q = quad;
+                return {
+                    x: (1 - u) * (1 - v) * q[0].x + u * (1 - v) * q[1].x + u * v * q[2].x + (1 - u) * v * q[3].x,
+                    y: (1 - u) * (1 - v) * q[0].y + u * (1 - v) * q[1].y + u * v * q[2].y + (1 - u) * v * q[3].y
+                };
+            }
+
+            function mapToFace(px, py, quad) {
+                let u = 0.5;
+                let v = 0.5;
+                for (let i = 0; i < 24; i++) {
+                    const p = bilinear(quad, u, v);
+                    const errX = px - p.x;
+                    const errY = py - p.y;
+                    if (errX * errX + errY * errY < 0.25) break;
+                    const pu = bilinear(quad, Math.min(1, u + 0.01), v);
+                    const pv = bilinear(quad, u, Math.min(1, v + 0.01));
+                    const dux = (pu.x - p.x) / 0.01;
+                    const duy = (pu.y - p.y) / 0.01;
+                    const dvx = (pv.x - p.x) / 0.01;
+                    const dvy = (pv.y - p.y) / 0.01;
+                    const det = dux * dvy - duy * dvx;
+                    if (Math.abs(det) < 1e-6) break;
+                    u += ((errX * dvy - errY * dvx) / det) * 0.45;
+                    v += ((-errX * duy + errY * dux) / det) * 0.45;
+                    u = Math.max(0, Math.min(1, u));
+                    v = Math.max(0, Math.min(1, v));
+                }
+                if (u < 0 || u > 1 || v < 0 || v > 1) return null;
+                return { x: u * FACE_W, y: v * FACE_H };
+            }
+
+            function pointInQuad(px, py, quad) {
+                function cross(a, b, c) {
+                    return (a.x - c.x) * (b.y - c.y) - (b.x - c.x) * (a.y - c.y);
+                }
+                const p = { x: px, y: py };
+                const signs = [
+                    cross(p, quad[0], quad[1]),
+                    cross(p, quad[1], quad[2]),
+                    cross(p, quad[2], quad[3]),
+                    cross(p, quad[3], quad[0])
+                ];
+                const pos = signs[0] >= 0;
+                return signs.every(s => (s >= 0) === pos);
+            }
+
+            function forwardTap(x, y) {
+                const js = `(function(x,y){try{var R=require("jibo/lib/Runtime").default;var g=R.instance.face.gestures;g&&g.spoofGesture("tap",x,y)}catch(e){console.error("[sim tap forward]",e)}})(${x},${y});`;
+                if (typeof wv.executeJavaScript === 'function') {
+                    wv.executeJavaScript(js);
+                }
+            }
+
+            function shouldForwardTap(e) {
+                const skillWv = document.getElementById('skill');
+                if (skillWv && (e.target === skillWv || skillWv === e.target)) return false;
+                const face = document.getElementById('face');
+                const faceContent = document.getElementById('faceContent');
+                const viz = document.getElementById('visualizer');
+                const forwardTargets = [viz, face, faceContent, container];
+                return forwardTargets.some(el => el && (e.target === el || el.contains(e.target)));
+            }
+
+            container.addEventListener('mousedown', (e) => {
+                if (!container.classList.contains('view3d')) return;
+                if (e.button !== 0) return;
+                const info = window.__jiboSimFaceQuad;
+                if (!info || info.behind || !info.corners || info.corners.length !== 4) return;
+                if (!pointInQuad(e.clientX, e.clientY, info.corners)) return;
+                // matrix3d warps the webview but Electron hit-testing does not follow;
+                // clicks often land on #face or #visualizer instead of the guest webview.
+                if (!shouldForwardTap(e)) return;
+                const pt = mapToFace(e.clientX, e.clientY, info.corners);
+                if (!pt) return;
+                e.preventDefault();
+                e.stopPropagation();
+                forwardTap(pt.x, pt.y);
+            }, true);
+        })();
+    </script>
+</body>
+</html>

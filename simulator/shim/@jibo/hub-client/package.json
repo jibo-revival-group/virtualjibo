@@ -1,0 +1,7 @@
+{
+  "name": "@jibo/hub-client",
+  "version": "1.0.23-stub",
+  "description": "No-op stub for @jibo/hub-client (the real package is not in stuff/)",
+  "main": "index.js",
+  "private": true
+}

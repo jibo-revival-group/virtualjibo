@@ -1,0 +1,7 @@
+{
+  "name": "jibo-sync-stage",
+  "version": "0.0.0-stub",
+  "description": "No-op stub of jibo-sync-stage for the simulator",
+  "main": "index.js",
+  "private": true
+}

@@ -1,0 +1,1969 @@
+{
+  "name": "skills-service-manager",
+  "version": "10.3.5",
+  "dependencies": {
+    "@jibo/analytics-node": {
+      "version": "1.0.25",
+      "from": "@jibo/analytics-node@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/@jibo/analytics-node/-/@jibo/analytics-node-1.0.25.tgz"
+    },
+    "@jibo/request": {
+      "version": "2.81.24",
+      "from": "@jibo/request@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/@jibo/request/-/@jibo/request-2.81.24.tgz"
+    },
+    "@jibo/three": {
+      "version": "1.0.24",
+      "from": "@jibo/three@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/@jibo/three/-/@jibo/three-1.0.24.tgz"
+    },
+    "@segment/loosely-validate-event": {
+      "version": "1.1.2",
+      "from": "@segment/loosely-validate-event@>=1.1.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/@segment/loosely-validate-event/-/loosely-validate-event-1.1.2.tgz"
+    },
+    "@types/node": {
+      "version": "6.0.88",
+      "from": "@types/node@>=6.0.0 <7.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/@types/node/-/node-6.0.88.tgz"
+    },
+    "@types/ws": {
+      "version": "3.0.2",
+      "from": "@types/ws@>=3.0.0 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/@types/ws/-/ws-3.0.2.tgz"
+    },
+    "acorn": {
+      "version": "1.2.2",
+      "from": "acorn@>=1.0.3 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/acorn/-/acorn-1.2.2.tgz"
+    },
+    "ajv": {
+      "version": "5.2.3",
+      "from": "ajv@>=5.1.0 <6.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ajv/-/ajv-5.2.3.tgz"
+    },
+    "amdefine": {
+      "version": "1.0.1",
+      "from": "amdefine@>=0.0.4",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/amdefine/-/amdefine-1.0.1.tgz"
+    },
+    "animation-utilities": {
+      "version": "3.2.14",
+      "from": "animation-utilities@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/animation-utilities/-/animation-utilities-3.2.14.tgz",
+      "dependencies": {
+        "find-root": {
+          "version": "1.0.0",
+          "from": "find-root@1.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/find-root/-/find-root-1.0.0.tgz"
+        }
+      }
+    },
+    "ansi-regex": {
+      "version": "2.1.1",
+      "from": "ansi-regex@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ansi-regex/-/ansi-regex-2.1.1.tgz"
+    },
+    "ansi-styles": {
+      "version": "2.2.1",
+      "from": "ansi-styles@>=2.2.1 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ansi-styles/-/ansi-styles-2.2.1.tgz"
+    },
+    "array-find-index": {
+      "version": "1.0.2",
+      "from": "array-find-index@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/array-find-index/-/array-find-index-1.0.2.tgz"
+    },
+    "array-flatten": {
+      "version": "2.1.1",
+      "from": "array-flatten@2.1.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/array-flatten/-/array-flatten-2.1.1.tgz"
+    },
+    "asn1": {
+      "version": "0.2.3",
+      "from": "asn1@>=0.2.3 <0.3.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/asn1/-/asn1-0.2.3.tgz"
+    },
+    "assert-plus": {
+      "version": "0.2.0",
+      "from": "assert-plus@>=0.2.0 <0.3.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/assert-plus/-/assert-plus-0.2.0.tgz"
+    },
+    "ast-types": {
+      "version": "0.8.15",
+      "from": "ast-types@0.8.15",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ast-types/-/ast-types-0.8.15.tgz"
+    },
+    "async": {
+      "version": "1.5.2",
+      "from": "async@>=1.5.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/async/-/async-1.5.2.tgz"
+    },
+    "async-limiter": {
+      "version": "1.0.0",
+      "from": "async-limiter@>=1.0.0 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/async-limiter/-/async-limiter-1.0.0.tgz"
+    },
+    "async-parallel": {
+      "version": "1.2.3",
+      "from": "async-parallel@>=1.2.3 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/async-parallel/-/async-parallel-1.2.3.tgz"
+    },
+    "asynckit": {
+      "version": "0.4.0",
+      "from": "asynckit@>=0.4.0 <0.5.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/asynckit/-/asynckit-0.4.0.tgz"
+    },
+    "aws-sign2": {
+      "version": "0.7.0",
+      "from": "aws-sign2@>=0.7.0 <0.8.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/aws-sign2/-/aws-sign2-0.7.0.tgz"
+    },
+    "aws4": {
+      "version": "1.6.0",
+      "from": "aws4@>=1.2.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/aws4/-/aws4-1.6.0.tgz"
+    },
+    "balanced-match": {
+      "version": "1.0.0",
+      "from": "balanced-match@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/balanced-match/-/balanced-match-1.0.0.tgz"
+    },
+    "base62": {
+      "version": "0.1.1",
+      "from": "base62@0.1.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/base62/-/base62-0.1.1.tgz"
+    },
+    "base64-js": {
+      "version": "1.2.1",
+      "from": "base64-js@>=1.0.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/base64-js/-/base64-js-1.2.1.tgz"
+    },
+    "bcrypt-pbkdf": {
+      "version": "1.0.1",
+      "from": "bcrypt-pbkdf@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.1.tgz"
+    },
+    "bignumber.js": {
+      "version": "2.4.0",
+      "from": "bignumber.js@>=2.1.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/bignumber.js/-/bignumber.js-2.4.0.tgz"
+    },
+    "binary-search-tree": {
+      "version": "0.2.5",
+      "from": "binary-search-tree@0.2.5",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/binary-search-tree/-/binary-search-tree-0.2.5.tgz"
+    },
+    "bl": {
+      "version": "1.2.1",
+      "from": "bl@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/bl/-/bl-1.2.1.tgz",
+      "dependencies": {
+        "readable-stream": {
+          "version": "2.3.3",
+          "from": "readable-stream@>=2.0.5 <3.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/readable-stream/-/readable-stream-2.3.3.tgz"
+        },
+        "string_decoder": {
+          "version": "1.0.3",
+          "from": "string_decoder@>=1.0.3 <1.1.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/string_decoder/-/string_decoder-1.0.3.tgz"
+        }
+      }
+    },
+    "blob-to-buffer": {
+      "version": "1.2.6",
+      "from": "blob-to-buffer@>=1.2.6 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/blob-to-buffer/-/blob-to-buffer-1.2.6.tgz"
+    },
+    "bmp-js": {
+      "version": "0.0.1",
+      "from": "bmp-js@0.0.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/bmp-js/-/bmp-js-0.0.1.tgz"
+    },
+    "body-parser": {
+      "version": "1.18.2",
+      "from": "body-parser@>=1.15.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/body-parser/-/body-parser-1.18.2.tgz",
+      "dependencies": {
+        "qs": {
+          "version": "6.5.1",
+          "from": "qs@6.5.1",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/qs/-/qs-6.5.1.tgz"
+        }
+      }
+    },
+    "boom": {
+      "version": "2.10.1",
+      "from": "boom@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/boom/-/boom-2.10.1.tgz"
+    },
+    "brace-expansion": {
+      "version": "1.1.8",
+      "from": "brace-expansion@>=1.1.7 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/brace-expansion/-/brace-expansion-1.1.8.tgz"
+    },
+    "buffer": {
+      "version": "4.9.1",
+      "from": "buffer@4.9.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/buffer/-/buffer-4.9.1.tgz"
+    },
+    "buffer-equal": {
+      "version": "0.0.1",
+      "from": "buffer-equal@0.0.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/buffer-equal/-/buffer-equal-0.0.1.tgz"
+    },
+    "builtin-modules": {
+      "version": "1.1.1",
+      "from": "builtin-modules@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/builtin-modules/-/builtin-modules-1.1.1.tgz"
+    },
+    "bytes": {
+      "version": "3.0.0",
+      "from": "bytes@3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/bytes/-/bytes-3.0.0.tgz"
+    },
+    "camelcase": {
+      "version": "2.1.1",
+      "from": "camelcase@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/camelcase/-/camelcase-2.1.1.tgz"
+    },
+    "camelcase-keys": {
+      "version": "2.1.0",
+      "from": "camelcase-keys@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/camelcase-keys/-/camelcase-keys-2.1.0.tgz"
+    },
+    "caseless": {
+      "version": "0.12.0",
+      "from": "caseless@>=0.12.0 <0.13.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/caseless/-/caseless-0.12.0.tgz"
+    },
+    "chalk": {
+      "version": "1.1.3",
+      "from": "chalk@>=1.1.3 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/chalk/-/chalk-1.1.3.tgz"
+    },
+    "charenc": {
+      "version": "0.0.2",
+      "from": "charenc@>=0.0.1 <0.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/charenc/-/charenc-0.0.2.tgz"
+    },
+    "chownr": {
+      "version": "1.0.1",
+      "from": "chownr@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/chownr/-/chownr-1.0.1.tgz"
+    },
+    "clone": {
+      "version": "2.1.1",
+      "from": "clone@>=2.1.1 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/clone/-/clone-2.1.1.tgz"
+    },
+    "co": {
+      "version": "4.6.0",
+      "from": "co@>=4.6.0 <5.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/co/-/co-4.6.0.tgz"
+    },
+    "code-point-at": {
+      "version": "1.1.0",
+      "from": "code-point-at@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/code-point-at/-/code-point-at-1.1.0.tgz"
+    },
+    "colors": {
+      "version": "0.6.2",
+      "from": "colors@0.6.2",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/colors/-/colors-0.6.2.tgz"
+    },
+    "combined-stream": {
+      "version": "1.0.5",
+      "from": "combined-stream@>=1.0.5 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/combined-stream/-/combined-stream-1.0.5.tgz"
+    },
+    "component-type": {
+      "version": "1.2.1",
+      "from": "component-type@>=1.2.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/component-type/-/component-type-1.2.1.tgz"
+    },
+    "concat-map": {
+      "version": "0.0.1",
+      "from": "concat-map@0.0.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/concat-map/-/concat-map-0.0.1.tgz"
+    },
+    "concat-stream": {
+      "version": "1.6.0",
+      "from": "concat-stream@1.6.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/concat-stream/-/concat-stream-1.6.0.tgz",
+      "dependencies": {
+        "readable-stream": {
+          "version": "2.3.3",
+          "from": "readable-stream@>=2.2.2 <3.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/readable-stream/-/readable-stream-2.3.3.tgz"
+        },
+        "string_decoder": {
+          "version": "1.0.3",
+          "from": "string_decoder@>=1.0.3 <1.1.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/string_decoder/-/string_decoder-1.0.3.tgz"
+        }
+      }
+    },
+    "connect": {
+      "version": "3.6.5",
+      "from": "connect@>=3.4.1 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/connect/-/connect-3.6.5.tgz"
+    },
+    "content-type": {
+      "version": "1.0.4",
+      "from": "content-type@>=1.0.4 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/content-type/-/content-type-1.0.4.tgz"
+    },
+    "core-util-is": {
+      "version": "1.0.2",
+      "from": "core-util-is@1.0.2",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/core-util-is/-/core-util-is-1.0.2.tgz"
+    },
+    "cron-parser": {
+      "version": "1.1.0",
+      "from": "cron-parser@1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/cron-parser/-/cron-parser-1.1.0.tgz"
+    },
+    "crypt": {
+      "version": "0.0.2",
+      "from": "crypt@>=0.0.1 <0.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/crypt/-/crypt-0.0.2.tgz"
+    },
+    "cryptiles": {
+      "version": "2.0.5",
+      "from": "cryptiles@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/cryptiles/-/cryptiles-2.0.5.tgz"
+    },
+    "crypto": {
+      "version": "0.0.3",
+      "from": "crypto@0.0.3",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/crypto/-/crypto-0.0.3.tgz"
+    },
+    "crypto-browserify": {
+      "version": "1.0.9",
+      "from": "crypto-browserify@1.0.9",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/crypto-browserify/-/crypto-browserify-1.0.9.tgz"
+    },
+    "crypto-token": {
+      "version": "1.0.1",
+      "from": "crypto-token@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/crypto-token/-/crypto-token-1.0.1.tgz"
+    },
+    "currently-unhandled": {
+      "version": "0.4.1",
+      "from": "currently-unhandled@>=0.4.1 <0.5.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/currently-unhandled/-/currently-unhandled-0.4.1.tgz"
+    },
+    "dashdash": {
+      "version": "1.14.1",
+      "from": "dashdash@>=1.12.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/dashdash/-/dashdash-1.14.1.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@>=1.0.0 <2.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/assert-plus/-/assert-plus-1.0.0.tgz"
+        }
+      }
+    },
+    "debug": {
+      "version": "2.6.9",
+      "from": "debug@2.6.9",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/debug/-/debug-2.6.9.tgz"
+    },
+    "decamelize": {
+      "version": "1.2.0",
+      "from": "decamelize@>=1.1.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/decamelize/-/decamelize-1.2.0.tgz"
+    },
+    "delayed-stream": {
+      "version": "1.0.0",
+      "from": "delayed-stream@>=1.0.0 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/delayed-stream/-/delayed-stream-1.0.0.tgz"
+    },
+    "depd": {
+      "version": "1.1.1",
+      "from": "depd@>=1.1.1 <1.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/depd/-/depd-1.1.1.tgz"
+    },
+    "destroy": {
+      "version": "1.0.4",
+      "from": "destroy@>=1.0.4 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/destroy/-/destroy-1.0.4.tgz"
+    },
+    "dom-walk": {
+      "version": "0.1.1",
+      "from": "dom-walk@>=0.1.0 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/dom-walk/-/dom-walk-0.1.1.tgz"
+    },
+    "ecc-jsbn": {
+      "version": "0.1.1",
+      "from": "ecc-jsbn@>=0.1.1 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz"
+    },
+    "ee-first": {
+      "version": "1.1.1",
+      "from": "ee-first@1.1.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ee-first/-/ee-first-1.1.1.tgz"
+    },
+    "encodeurl": {
+      "version": "1.0.1",
+      "from": "encodeurl@>=1.0.1 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/encodeurl/-/encodeurl-1.0.1.tgz"
+    },
+    "end-of-stream": {
+      "version": "1.4.0",
+      "from": "end-of-stream@>=1.1.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/end-of-stream/-/end-of-stream-1.4.0.tgz"
+    },
+    "env-paths": {
+      "version": "1.0.0",
+      "from": "env-paths@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/env-paths/-/env-paths-1.0.0.tgz"
+    },
+    "error-ex": {
+      "version": "1.3.1",
+      "from": "error-ex@>=1.2.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/error-ex/-/error-ex-1.3.1.tgz"
+    },
+    "es3ify": {
+      "version": "0.1.4",
+      "from": "es3ify@>=0.1.3 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/es3ify/-/es3ify-0.1.4.tgz"
+    },
+    "es6-promise": {
+      "version": "3.3.1",
+      "from": "es6-promise@>=3.0.2 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/es6-promise/-/es6-promise-3.3.1.tgz"
+    },
+    "escape-html": {
+      "version": "1.0.3",
+      "from": "escape-html@>=1.0.3 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/escape-html/-/escape-html-1.0.3.tgz"
+    },
+    "escape-string-regexp": {
+      "version": "1.0.5",
+      "from": "escape-string-regexp@>=1.0.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz"
+    },
+    "esmangle-evaluator": {
+      "version": "1.0.1",
+      "from": "esmangle-evaluator@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/esmangle-evaluator/-/esmangle-evaluator-1.0.1.tgz"
+    },
+    "esprima-fb": {
+      "version": "3001.1.0-dev-harmony-fb",
+      "from": "esprima-fb@>=3001.1.0-dev-harmony-fb <3001.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/esprima-fb/-/esprima-fb-3001.0001.0000-dev-harmony-fb.tgz"
+    },
+    "etag": {
+      "version": "1.8.1",
+      "from": "etag@>=1.8.1 <1.9.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/etag/-/etag-1.8.1.tgz"
+    },
+    "eventemitter3": {
+      "version": "0.0.0",
+      "from": "eventemitter3@0.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/eventemitter3/-/eventemitter3-0.0.0.tgz"
+    },
+    "exif-parser": {
+      "version": "0.1.12",
+      "from": "exif-parser@>=0.1.9 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/exif-parser/-/exif-parser-0.1.12.tgz"
+    },
+    "extend": {
+      "version": "3.0.1",
+      "from": "extend@>=3.0.0 <3.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/extend/-/extend-3.0.1.tgz"
+    },
+    "extract-zip": {
+      "version": "1.6.5",
+      "from": "extract-zip@>=1.5.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/extract-zip/-/extract-zip-1.6.5.tgz",
+      "dependencies": {
+        "debug": {
+          "version": "2.2.0",
+          "from": "debug@2.2.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/debug/-/debug-2.2.0.tgz"
+        },
+        "mkdirp": {
+          "version": "0.5.0",
+          "from": "mkdirp@0.5.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/mkdirp/-/mkdirp-0.5.0.tgz"
+        },
+        "ms": {
+          "version": "0.7.1",
+          "from": "ms@0.7.1",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ms/-/ms-0.7.1.tgz"
+        }
+      }
+    },
+    "extsprintf": {
+      "version": "1.3.0",
+      "from": "extsprintf@1.3.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/extsprintf/-/extsprintf-1.3.0.tgz"
+    },
+    "falafel": {
+      "version": "1.2.0",
+      "from": "falafel@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/falafel/-/falafel-1.2.0.tgz",
+      "dependencies": {
+        "isarray": {
+          "version": "0.0.1",
+          "from": "isarray@0.0.1",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/isarray/-/isarray-0.0.1.tgz"
+        }
+      }
+    },
+    "fast-deep-equal": {
+      "version": "1.0.0",
+      "from": "fast-deep-equal@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/fast-deep-equal/-/fast-deep-equal-1.0.0.tgz"
+    },
+    "fd-slicer": {
+      "version": "1.0.1",
+      "from": "fd-slicer@>=1.0.1 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/fd-slicer/-/fd-slicer-1.0.1.tgz"
+    },
+    "file-type": {
+      "version": "3.9.0",
+      "from": "file-type@>=3.1.0 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/file-type/-/file-type-3.9.0.tgz"
+    },
+    "finalhandler": {
+      "version": "1.0.6",
+      "from": "finalhandler@1.0.6",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/finalhandler/-/finalhandler-1.0.6.tgz"
+    },
+    "find-root": {
+      "version": "1.1.0",
+      "from": "find-root@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/find-root/-/find-root-1.1.0.tgz"
+    },
+    "find-up": {
+      "version": "1.1.2",
+      "from": "find-up@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/find-up/-/find-up-1.1.2.tgz"
+    },
+    "for-each": {
+      "version": "0.3.2",
+      "from": "for-each@>=0.3.2 <0.4.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/for-each/-/for-each-0.3.2.tgz"
+    },
+    "foreach": {
+      "version": "2.0.5",
+      "from": "foreach@>=2.0.5 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/foreach/-/foreach-2.0.5.tgz"
+    },
+    "forever-agent": {
+      "version": "0.6.1",
+      "from": "forever-agent@>=0.6.1 <0.7.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/forever-agent/-/forever-agent-0.6.1.tgz"
+    },
+    "form-data": {
+      "version": "2.3.1",
+      "from": "form-data@>=2.3.1 <2.4.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/form-data/-/form-data-2.3.1.tgz"
+    },
+    "format-error": {
+      "version": "1.0.0",
+      "from": "format-error@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/format-error/-/format-error-1.0.0.tgz"
+    },
+    "fresh": {
+      "version": "0.5.2",
+      "from": "fresh@0.5.2",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/fresh/-/fresh-0.5.2.tgz"
+    },
+    "fs-extra": {
+      "version": "0.30.0",
+      "from": "fs-extra@>=0.30.0 <0.31.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/fs-extra/-/fs-extra-0.30.0.tgz"
+    },
+    "fs.realpath": {
+      "version": "1.0.0",
+      "from": "fs.realpath@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/fs.realpath/-/fs.realpath-1.0.0.tgz"
+    },
+    "get-stdin": {
+      "version": "4.0.1",
+      "from": "get-stdin@>=4.0.1 <5.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/get-stdin/-/get-stdin-4.0.1.tgz"
+    },
+    "getpass": {
+      "version": "0.1.7",
+      "from": "getpass@>=0.1.1 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/getpass/-/getpass-0.1.7.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@>=1.0.0 <2.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/assert-plus/-/assert-plus-1.0.0.tgz"
+        }
+      }
+    },
+    "glob": {
+      "version": "7.1.2",
+      "from": "glob@>=7.0.5 <8.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/glob/-/glob-7.1.2.tgz"
+    },
+    "global": {
+      "version": "4.3.2",
+      "from": "global@>=4.3.0 <4.4.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/global/-/global-4.3.2.tgz"
+    },
+    "graceful-fs": {
+      "version": "4.1.11",
+      "from": "graceful-fs@>=4.1.2 <5.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/graceful-fs/-/graceful-fs-4.1.11.tgz"
+    },
+    "har-schema": {
+      "version": "2.0.0",
+      "from": "har-schema@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/har-schema/-/har-schema-2.0.0.tgz"
+    },
+    "har-validator": {
+      "version": "5.0.3",
+      "from": "har-validator@>=5.0.3 <5.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/har-validator/-/har-validator-5.0.3.tgz"
+    },
+    "has-ansi": {
+      "version": "2.0.0",
+      "from": "has-ansi@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/has-ansi/-/has-ansi-2.0.0.tgz"
+    },
+    "hawk": {
+      "version": "3.1.3",
+      "from": "hawk@>=3.1.3 <3.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/hawk/-/hawk-3.1.3.tgz"
+    },
+    "hoek": {
+      "version": "2.16.3",
+      "from": "hoek@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/hoek/-/hoek-2.16.3.tgz"
+    },
+    "hosted-git-info": {
+      "version": "2.5.0",
+      "from": "hosted-git-info@>=2.1.4 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/hosted-git-info/-/hosted-git-info-2.5.0.tgz"
+    },
+    "http-errors": {
+      "version": "1.6.2",
+      "from": "http-errors@>=1.6.2 <1.7.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/http-errors/-/http-errors-1.6.2.tgz"
+    },
+    "http-signature": {
+      "version": "1.1.1",
+      "from": "http-signature@>=1.1.0 <1.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/http-signature/-/http-signature-1.1.1.tgz"
+    },
+    "http-status-codes": {
+      "version": "1.3.0",
+      "from": "http-status-codes@>=1.1.6 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/http-status-codes/-/http-status-codes-1.3.0.tgz"
+    },
+    "iconv-lite": {
+      "version": "0.4.19",
+      "from": "iconv-lite@0.4.19",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/iconv-lite/-/iconv-lite-0.4.19.tgz"
+    },
+    "ieee754": {
+      "version": "1.1.8",
+      "from": "ieee754@>=1.1.4 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ieee754/-/ieee754-1.1.8.tgz"
+    },
+    "immediate": {
+      "version": "3.0.6",
+      "from": "immediate@>=3.0.5 <3.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/immediate/-/immediate-3.0.6.tgz"
+    },
+    "indent-string": {
+      "version": "2.1.0",
+      "from": "indent-string@>=2.1.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/indent-string/-/indent-string-2.1.0.tgz"
+    },
+    "inflight": {
+      "version": "1.0.6",
+      "from": "inflight@>=1.0.4 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/inflight/-/inflight-1.0.6.tgz"
+    },
+    "inherits": {
+      "version": "2.0.3",
+      "from": "inherits@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/inherits/-/inherits-2.0.3.tgz"
+    },
+    "inline-process-browser": {
+      "version": "1.0.0",
+      "from": "inline-process-browser@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/inline-process-browser/-/inline-process-browser-1.0.0.tgz"
+    },
+    "ip-regex": {
+      "version": "1.0.3",
+      "from": "ip-regex@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ip-regex/-/ip-regex-1.0.3.tgz"
+    },
+    "is-arrayish": {
+      "version": "0.2.1",
+      "from": "is-arrayish@>=0.2.1 <0.3.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/is-arrayish/-/is-arrayish-0.2.1.tgz"
+    },
+    "is-buffer": {
+      "version": "1.1.5",
+      "from": "is-buffer@>=1.1.1 <1.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/is-buffer/-/is-buffer-1.1.5.tgz"
+    },
+    "is-builtin-module": {
+      "version": "1.0.0",
+      "from": "is-builtin-module@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/is-builtin-module/-/is-builtin-module-1.0.0.tgz"
+    },
+    "is-finite": {
+      "version": "1.0.2",
+      "from": "is-finite@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/is-finite/-/is-finite-1.0.2.tgz"
+    },
+    "is-fullwidth-code-point": {
+      "version": "1.0.0",
+      "from": "is-fullwidth-code-point@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/is-fullwidth-code-point/-/is-fullwidth-code-point-1.0.0.tgz"
+    },
+    "is-function": {
+      "version": "1.0.1",
+      "from": "is-function@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/is-function/-/is-function-1.0.1.tgz"
+    },
+    "is-typedarray": {
+      "version": "1.0.0",
+      "from": "is-typedarray@>=1.0.0 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/is-typedarray/-/is-typedarray-1.0.0.tgz"
+    },
+    "is-utf8": {
+      "version": "0.2.1",
+      "from": "is-utf8@>=0.2.0 <0.3.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/is-utf8/-/is-utf8-0.2.1.tgz"
+    },
+    "isarray": {
+      "version": "1.0.0",
+      "from": "isarray@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/isarray/-/isarray-1.0.0.tgz"
+    },
+    "isstream": {
+      "version": "0.1.2",
+      "from": "isstream@>=0.1.2 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/isstream/-/isstream-0.1.2.tgz"
+    },
+    "jibo-attention-manager": {
+      "version": "4.2.14",
+      "from": "jibo-attention-manager@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-attention-manager/-/jibo-attention-manager-4.2.14.tgz"
+    },
+    "jibo-cai-utils": {
+      "version": "4.1.14",
+      "from": "jibo-cai-utils@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-cai-utils/-/jibo-cai-utils-4.1.14.tgz"
+    },
+    "jibo-client-framework": {
+      "version": "2.4.14",
+      "from": "jibo-client-framework@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-client-framework/-/jibo-client-framework-2.4.14.tgz"
+    },
+    "jibo-common-types": {
+      "version": "2.6.8",
+      "from": "jibo-common-types@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-common-types/-/jibo-common-types-2.6.8.tgz",
+      "dependencies": {
+        "async": {
+          "version": "2.5.0",
+          "from": "async@>=2.1.2 <3.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/async/-/async-2.5.0.tgz"
+        }
+      }
+    },
+    "jibo-dof-arbiter": {
+      "version": "2.3.8",
+      "from": "jibo-dof-arbiter@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-dof-arbiter/-/jibo-dof-arbiter-2.3.8.tgz"
+    },
+    "jibo-expression-client": {
+      "version": "3.2.8",
+      "from": "jibo-expression-client@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-expression-client/-/jibo-expression-client-3.2.8.tgz"
+    },
+    "jibo-kb": {
+      "version": "6.5.11",
+      "from": "jibo-kb@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-kb/-/jibo-kb-6.5.11.tgz"
+    },
+    "jibo-log": {
+      "version": "3.3.14",
+      "from": "jibo-log@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-log/-/jibo-log-3.3.14.tgz",
+      "dependencies": {
+        "fs-extra": {
+          "version": "3.0.1",
+          "from": "fs-extra@>=3.0.1 <4.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/fs-extra/-/fs-extra-3.0.1.tgz"
+        },
+        "jsonfile": {
+          "version": "3.0.1",
+          "from": "jsonfile@>=3.0.0 <4.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jsonfile/-/jsonfile-3.0.1.tgz"
+        }
+      }
+    },
+    "jibo-node-xml": {
+      "version": "5.1.14",
+      "from": "jibo-node-xml@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-node-xml/-/jibo-node-xml-5.1.14.tgz"
+    },
+    "jibo-plugins": {
+      "version": "2.2.14",
+      "from": "jibo-plugins@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-plugins/-/jibo-plugins-2.2.14.tgz"
+    },
+    "jibo-server-client": {
+      "version": "3.0.56",
+      "from": "jibo-server-client@3.0.56",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-server-client/-/jibo-server-client-3.0.56.tgz",
+      "dependencies": {
+        "uuid": {
+          "version": "3.0.0",
+          "from": "uuid@3.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/uuid/-/uuid-3.0.0.tgz"
+        }
+      }
+    },
+    "jibo-service-clients": {
+      "version": "2.1.10",
+      "from": "jibo-service-clients@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-service-clients/-/jibo-service-clients-2.1.10.tgz",
+      "dependencies": {
+        "async": {
+          "version": "2.5.0",
+          "from": "async@>=2.1.2 <3.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/async/-/async-2.5.0.tgz"
+        }
+      }
+    },
+    "jibo-service-framework": {
+      "version": "2.3.14",
+      "from": "jibo-service-framework@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-service-framework/-/jibo-service-framework-2.3.14.tgz"
+    },
+    "jibo-state-machine": {
+      "version": "5.3.14",
+      "from": "jibo-state-machine@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-state-machine/-/jibo-state-machine-5.3.14.tgz"
+    },
+    "jibo-sync": {
+      "version": "3.1.14",
+      "from": "jibo-sync@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-sync/-/jibo-sync-3.1.14.tgz",
+      "dependencies": {
+        "fs-extra": {
+          "version": "0.26.7",
+          "from": "fs-extra@>=0.26.2 <0.27.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/fs-extra/-/fs-extra-0.26.7.tgz"
+        }
+      }
+    },
+    "jibo-sync-stage": {
+      "version": "1.1.14",
+      "from": "jibo-sync-stage@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-sync-stage/-/jibo-sync-stage-1.1.14.tgz",
+      "dependencies": {
+        "fs-extra": {
+          "version": "3.0.1",
+          "from": "fs-extra@>=3.0.1 <4.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/fs-extra/-/fs-extra-3.0.1.tgz"
+        },
+        "jsonfile": {
+          "version": "3.0.1",
+          "from": "jsonfile@>=3.0.0 <4.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jsonfile/-/jsonfile-3.0.1.tgz"
+        },
+        "minimist": {
+          "version": "1.2.0",
+          "from": "minimist@>=1.2.0 <2.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/minimist/-/minimist-1.2.0.tgz"
+        }
+      }
+    },
+    "jibo-typed-events": {
+      "version": "4.1.14",
+      "from": "jibo-typed-events@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jibo-typed-events/-/jibo-typed-events-4.1.14.tgz"
+    },
+    "jimp": {
+      "version": "0.2.27",
+      "from": "jimp@0.2.27",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jimp/-/jimp-0.2.27.tgz"
+    },
+    "jmespath": {
+      "version": "0.15.0",
+      "from": "jmespath@0.15.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jmespath/-/jmespath-0.15.0.tgz"
+    },
+    "join-component": {
+      "version": "1.1.0",
+      "from": "join-component@>=1.1.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/join-component/-/join-component-1.1.0.tgz"
+    },
+    "jpeg-js": {
+      "version": "0.2.0",
+      "from": "jpeg-js@>=0.2.0 <0.3.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jpeg-js/-/jpeg-js-0.2.0.tgz"
+    },
+    "jsbn": {
+      "version": "0.1.1",
+      "from": "jsbn@>=0.1.0 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jsbn/-/jsbn-0.1.1.tgz"
+    },
+    "json-schema": {
+      "version": "0.2.3",
+      "from": "json-schema@0.2.3",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/json-schema/-/json-schema-0.2.3.tgz"
+    },
+    "json-schema-traverse": {
+      "version": "0.3.1",
+      "from": "json-schema-traverse@>=0.3.0 <0.4.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/json-schema-traverse/-/json-schema-traverse-0.3.1.tgz"
+    },
+    "json-stable-stringify": {
+      "version": "1.0.1",
+      "from": "json-stable-stringify@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/json-stable-stringify/-/json-stable-stringify-1.0.1.tgz"
+    },
+    "json-stringify-safe": {
+      "version": "5.0.1",
+      "from": "json-stringify-safe@>=5.0.1 <5.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz"
+    },
+    "jsonfile": {
+      "version": "2.4.0",
+      "from": "jsonfile@>=2.1.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jsonfile/-/jsonfile-2.4.0.tgz"
+    },
+    "jsonify": {
+      "version": "0.0.0",
+      "from": "jsonify@>=0.0.0 <0.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jsonify/-/jsonify-0.0.0.tgz"
+    },
+    "jsprim": {
+      "version": "1.4.1",
+      "from": "jsprim@>=1.2.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jsprim/-/jsprim-1.4.1.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@1.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/assert-plus/-/assert-plus-1.0.0.tgz"
+        }
+      }
+    },
+    "jstransform": {
+      "version": "3.0.0",
+      "from": "jstransform@>=3.0.0 <3.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/jstransform/-/jstransform-3.0.0.tgz"
+    },
+    "klaw": {
+      "version": "1.3.1",
+      "from": "klaw@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/klaw/-/klaw-1.3.1.tgz"
+    },
+    "lie": {
+      "version": "3.0.2",
+      "from": "lie@3.0.2",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/lie/-/lie-3.0.2.tgz"
+    },
+    "load-bmfont": {
+      "version": "1.3.0",
+      "from": "load-bmfont@>=1.2.3 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/load-bmfont/-/load-bmfont-1.3.0.tgz"
+    },
+    "load-json-file": {
+      "version": "1.1.0",
+      "from": "load-json-file@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/load-json-file/-/load-json-file-1.1.0.tgz"
+    },
+    "localforage": {
+      "version": "1.5.0",
+      "from": "localforage@>=1.3.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/localforage/-/localforage-1.5.0.tgz"
+    },
+    "lodash": {
+      "version": "4.17.4",
+      "from": "lodash@>=4.14.0 <5.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/lodash/-/lodash-4.17.4.tgz"
+    },
+    "long-timeout": {
+      "version": "0.0.2",
+      "from": "long-timeout@0.0.2",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/long-timeout/-/long-timeout-0.0.2.tgz"
+    },
+    "loud-rejection": {
+      "version": "1.6.0",
+      "from": "loud-rejection@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/loud-rejection/-/loud-rejection-1.6.0.tgz"
+    },
+    "map-obj": {
+      "version": "1.0.1",
+      "from": "map-obj@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/map-obj/-/map-obj-1.0.1.tgz"
+    },
+    "md5": {
+      "version": "2.2.1",
+      "from": "md5@>=2.2.1 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/md5/-/md5-2.2.1.tgz"
+    },
+    "media-typer": {
+      "version": "0.3.0",
+      "from": "media-typer@0.3.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/media-typer/-/media-typer-0.3.0.tgz"
+    },
+    "meow": {
+      "version": "3.7.0",
+      "from": "meow@>=3.1.0 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/meow/-/meow-3.7.0.tgz",
+      "dependencies": {
+        "minimist": {
+          "version": "1.2.0",
+          "from": "minimist@>=1.1.3 <2.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/minimist/-/minimist-1.2.0.tgz"
+        }
+      }
+    },
+    "methods": {
+      "version": "1.1.2",
+      "from": "methods@>=1.1.2 <1.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/methods/-/methods-1.1.2.tgz"
+    },
+    "mime": {
+      "version": "1.3.4",
+      "from": "mime@1.3.4",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/mime/-/mime-1.3.4.tgz"
+    },
+    "mime-db": {
+      "version": "1.30.0",
+      "from": "mime-db@>=1.30.0 <1.31.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/mime-db/-/mime-db-1.30.0.tgz"
+    },
+    "mime-types": {
+      "version": "2.1.17",
+      "from": "mime-types@>=2.1.15 <2.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/mime-types/-/mime-types-2.1.17.tgz"
+    },
+    "min-document": {
+      "version": "2.19.0",
+      "from": "min-document@>=2.19.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/min-document/-/min-document-2.19.0.tgz"
+    },
+    "minimatch": {
+      "version": "3.0.4",
+      "from": "minimatch@>=3.0.4 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/minimatch/-/minimatch-3.0.4.tgz"
+    },
+    "minimist": {
+      "version": "0.0.8",
+      "from": "minimist@0.0.8",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/minimist/-/minimist-0.0.8.tgz"
+    },
+    "mkdirp": {
+      "version": "0.5.1",
+      "from": "mkdirp@>=0.5.1 <0.6.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/mkdirp/-/mkdirp-0.5.1.tgz"
+    },
+    "ms": {
+      "version": "2.0.0",
+      "from": "ms@2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ms/-/ms-2.0.0.tgz"
+    },
+    "nan": {
+      "version": "1.8.4",
+      "from": "nan@>=1.8.0 <1.9.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/nan/-/nan-1.8.4.tgz"
+    },
+    "nedb": {
+      "version": "1.8.0",
+      "from": "nedb@>=1.1.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/nedb/-/nedb-1.8.0.tgz",
+      "dependencies": {
+        "async": {
+          "version": "0.2.10",
+          "from": "async@0.2.10",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/async/-/async-0.2.10.tgz"
+        }
+      }
+    },
+    "node-rsa": {
+      "version": "0.4.2",
+      "from": "node-rsa@>=0.4.2 <0.5.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/node-rsa/-/node-rsa-0.4.2.tgz"
+    },
+    "node-schedule": {
+      "version": "1.2.0",
+      "from": "node-schedule@1.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/node-schedule/-/node-schedule-1.2.0.tgz"
+    },
+    "normalize-package-data": {
+      "version": "2.4.0",
+      "from": "normalize-package-data@>=2.3.4 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/normalize-package-data/-/normalize-package-data-2.4.0.tgz"
+    },
+    "nugget": {
+      "version": "2.0.1",
+      "from": "nugget@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/nugget/-/nugget-2.0.1.tgz",
+      "dependencies": {
+        "isarray": {
+          "version": "0.0.1",
+          "from": "isarray@0.0.1",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/isarray/-/isarray-0.0.1.tgz"
+        },
+        "minimist": {
+          "version": "1.2.0",
+          "from": "minimist@>=1.1.0 <2.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/minimist/-/minimist-1.2.0.tgz"
+        },
+        "object-keys": {
+          "version": "0.4.0",
+          "from": "object-keys@>=0.4.0 <0.5.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/object-keys/-/object-keys-0.4.0.tgz"
+        },
+        "progress-stream": {
+          "version": "1.2.0",
+          "from": "progress-stream@>=1.1.0 <2.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/progress-stream/-/progress-stream-1.2.0.tgz"
+        },
+        "readable-stream": {
+          "version": "1.1.14",
+          "from": "readable-stream@>=1.1.9 <1.2.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/readable-stream/-/readable-stream-1.1.14.tgz"
+        },
+        "speedometer": {
+          "version": "0.1.4",
+          "from": "speedometer@>=0.1.2 <0.2.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/speedometer/-/speedometer-0.1.4.tgz"
+        },
+        "through2": {
+          "version": "0.2.3",
+          "from": "through2@>=0.2.3 <0.3.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/through2/-/through2-0.2.3.tgz"
+        },
+        "xtend": {
+          "version": "2.1.2",
+          "from": "xtend@>=2.1.1 <2.2.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/xtend/-/xtend-2.1.2.tgz"
+        }
+      }
+    },
+    "number-is-nan": {
+      "version": "1.0.1",
+      "from": "number-is-nan@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/number-is-nan/-/number-is-nan-1.0.1.tgz"
+    },
+    "oauth-sign": {
+      "version": "0.8.2",
+      "from": "oauth-sign@>=0.8.2 <0.9.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/oauth-sign/-/oauth-sign-0.8.2.tgz"
+    },
+    "object-assign": {
+      "version": "4.1.1",
+      "from": "object-assign@>=4.0.1 <5.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/object-assign/-/object-assign-4.1.1.tgz"
+    },
+    "object-keys": {
+      "version": "1.0.11",
+      "from": "object-keys@>=1.0.6 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/object-keys/-/object-keys-1.0.11.tgz"
+    },
+    "on-finished": {
+      "version": "2.3.0",
+      "from": "on-finished@>=2.3.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/on-finished/-/on-finished-2.3.0.tgz"
+    },
+    "once": {
+      "version": "1.4.0",
+      "from": "once@>=1.3.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/once/-/once-1.4.0.tgz"
+    },
+    "orchestrator": {
+      "version": "0.3.8",
+      "from": "orchestrator@>=0.3.7 <0.4.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/orchestrator/-/orchestrator-0.3.8.tgz",
+      "dependencies": {
+        "end-of-stream": {
+          "version": "0.1.5",
+          "from": "end-of-stream@>=0.1.5 <0.2.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/end-of-stream/-/end-of-stream-0.1.5.tgz"
+        },
+        "once": {
+          "version": "1.3.3",
+          "from": "once@>=1.3.0 <1.4.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/once/-/once-1.3.3.tgz"
+        }
+      }
+    },
+    "os-homedir": {
+      "version": "1.0.2",
+      "from": "os-homedir@>=1.0.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/os-homedir/-/os-homedir-1.0.2.tgz"
+    },
+    "parse-bmfont-ascii": {
+      "version": "1.0.6",
+      "from": "parse-bmfont-ascii@>=1.0.3 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/parse-bmfont-ascii/-/parse-bmfont-ascii-1.0.6.tgz"
+    },
+    "parse-bmfont-binary": {
+      "version": "1.0.6",
+      "from": "parse-bmfont-binary@>=1.0.5 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/parse-bmfont-binary/-/parse-bmfont-binary-1.0.6.tgz"
+    },
+    "parse-bmfont-xml": {
+      "version": "1.1.3",
+      "from": "parse-bmfont-xml@>=1.1.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/parse-bmfont-xml/-/parse-bmfont-xml-1.1.3.tgz"
+    },
+    "parse-headers": {
+      "version": "2.0.1",
+      "from": "parse-headers@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/parse-headers/-/parse-headers-2.0.1.tgz"
+    },
+    "parse-json": {
+      "version": "2.2.0",
+      "from": "parse-json@>=2.2.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/parse-json/-/parse-json-2.2.0.tgz"
+    },
+    "parser-download": {
+      "version": "3.2.13",
+      "from": "parser-download@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/parser-download/-/parser-download-3.2.13.tgz",
+      "dependencies": {
+        "minimist": {
+          "version": "1.2.0",
+          "from": "minimist@>=1.2.0 <2.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/minimist/-/minimist-1.2.0.tgz"
+        }
+      }
+    },
+    "parseurl": {
+      "version": "1.3.2",
+      "from": "parseurl@>=1.3.2 <1.4.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/parseurl/-/parseurl-1.3.2.tgz"
+    },
+    "path-exists": {
+      "version": "2.1.0",
+      "from": "path-exists@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/path-exists/-/path-exists-2.1.0.tgz"
+    },
+    "path-is-absolute": {
+      "version": "1.0.1",
+      "from": "path-is-absolute@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/path-is-absolute/-/path-is-absolute-1.0.1.tgz"
+    },
+    "path-to-regexp": {
+      "version": "0.1.7",
+      "from": "path-to-regexp@0.1.7",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/path-to-regexp/-/path-to-regexp-0.1.7.tgz"
+    },
+    "path-type": {
+      "version": "1.1.0",
+      "from": "path-type@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/path-type/-/path-type-1.1.0.tgz"
+    },
+    "pend": {
+      "version": "1.2.0",
+      "from": "pend@>=1.2.0 <1.3.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/pend/-/pend-1.2.0.tgz"
+    },
+    "performance-now": {
+      "version": "0.2.0",
+      "from": "performance-now@>=0.2.0 <0.3.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/performance-now/-/performance-now-0.2.0.tgz"
+    },
+    "pify": {
+      "version": "2.3.0",
+      "from": "pify@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/pify/-/pify-2.3.0.tgz"
+    },
+    "pinkie": {
+      "version": "2.0.4",
+      "from": "pinkie@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/pinkie/-/pinkie-2.0.4.tgz"
+    },
+    "pinkie-promise": {
+      "version": "2.0.1",
+      "from": "pinkie-promise@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/pinkie-promise/-/pinkie-promise-2.0.1.tgz"
+    },
+    "pixelmatch": {
+      "version": "4.0.2",
+      "from": "pixelmatch@>=4.0.0 <5.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/pixelmatch/-/pixelmatch-4.0.2.tgz"
+    },
+    "pngjs": {
+      "version": "3.3.0",
+      "from": "pngjs@>=3.0.0 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/pngjs/-/pngjs-3.3.0.tgz"
+    },
+    "pos": {
+      "version": "0.4.2",
+      "from": "pos@0.4.2",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/pos/-/pos-0.4.2.tgz"
+    },
+    "pretty-bytes": {
+      "version": "1.0.4",
+      "from": "pretty-bytes@>=1.0.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/pretty-bytes/-/pretty-bytes-1.0.4.tgz"
+    },
+    "prettyjson": {
+      "version": "0.13.0",
+      "from": "prettyjson@>=0.13.0 <0.14.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/prettyjson/-/prettyjson-0.13.0.tgz"
+    },
+    "private": {
+      "version": "0.1.7",
+      "from": "private@>=0.1.5 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/private/-/private-0.1.7.tgz"
+    },
+    "process": {
+      "version": "0.5.2",
+      "from": "process@>=0.5.1 <0.6.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/process/-/process-0.5.2.tgz"
+    },
+    "process-nextick-args": {
+      "version": "1.0.7",
+      "from": "process-nextick-args@>=1.0.6 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/process-nextick-args/-/process-nextick-args-1.0.7.tgz"
+    },
+    "progress": {
+      "version": "2.0.0",
+      "from": "progress@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/progress/-/progress-2.0.0.tgz"
+    },
+    "progress-stream": {
+      "version": "2.0.0",
+      "from": "progress-stream@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/progress-stream/-/progress-stream-2.0.0.tgz",
+      "dependencies": {
+        "readable-stream": {
+          "version": "2.3.3",
+          "from": "readable-stream@>=2.1.5 <3.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/readable-stream/-/readable-stream-2.3.3.tgz"
+        },
+        "string_decoder": {
+          "version": "1.0.3",
+          "from": "string_decoder@>=1.0.3 <1.1.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/string_decoder/-/string_decoder-1.0.3.tgz"
+        },
+        "through2": {
+          "version": "2.0.3",
+          "from": "through2@>=2.0.3 <2.1.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/through2/-/through2-2.0.3.tgz"
+        }
+      }
+    },
+    "pump": {
+      "version": "1.0.2",
+      "from": "pump@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/pump/-/pump-1.0.2.tgz"
+    },
+    "punycode": {
+      "version": "1.3.2",
+      "from": "punycode@1.3.2",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/punycode/-/punycode-1.3.2.tgz"
+    },
+    "qs": {
+      "version": "6.4.0",
+      "from": "qs@>=6.4.0 <6.5.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/qs/-/qs-6.4.0.tgz"
+    },
+    "querystring": {
+      "version": "0.2.0",
+      "from": "querystring@0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/querystring/-/querystring-0.2.0.tgz"
+    },
+    "range-parser": {
+      "version": "1.2.0",
+      "from": "range-parser@>=1.2.0 <1.3.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/range-parser/-/range-parser-1.2.0.tgz"
+    },
+    "raw-body": {
+      "version": "2.3.2",
+      "from": "raw-body@2.3.2",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/raw-body/-/raw-body-2.3.2.tgz"
+    },
+    "read-chunk": {
+      "version": "1.0.1",
+      "from": "read-chunk@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/read-chunk/-/read-chunk-1.0.1.tgz"
+    },
+    "read-pkg": {
+      "version": "1.1.0",
+      "from": "read-pkg@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/read-pkg/-/read-pkg-1.1.0.tgz"
+    },
+    "read-pkg-up": {
+      "version": "1.0.1",
+      "from": "read-pkg-up@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/read-pkg-up/-/read-pkg-up-1.0.1.tgz"
+    },
+    "readable-stream": {
+      "version": "1.0.34",
+      "from": "readable-stream@>=1.0.33-1 <1.1.0-0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/readable-stream/-/readable-stream-1.0.34.tgz",
+      "dependencies": {
+        "isarray": {
+          "version": "0.0.1",
+          "from": "isarray@0.0.1",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/isarray/-/isarray-0.0.1.tgz"
+        }
+      }
+    },
+    "recast": {
+      "version": "0.10.43",
+      "from": "recast@>=0.10.1 <0.11.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/recast/-/recast-0.10.43.tgz",
+      "dependencies": {
+        "esprima-fb": {
+          "version": "15001.1001.0-dev-harmony-fb",
+          "from": "esprima-fb@>=15001.1001.0-dev-harmony-fb <15001.1002.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/esprima-fb/-/esprima-fb-15001.1001.0-dev-harmony-fb.tgz"
+        },
+        "source-map": {
+          "version": "0.5.7",
+          "from": "source-map@>=0.5.0 <0.6.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/source-map/-/source-map-0.5.7.tgz"
+        }
+      }
+    },
+    "redent": {
+      "version": "1.0.0",
+      "from": "redent@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/redent/-/redent-1.0.0.tgz"
+    },
+    "remove-trailing-slash": {
+      "version": "0.1.0",
+      "from": "remove-trailing-slash@>=0.1.0 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/remove-trailing-slash/-/remove-trailing-slash-0.1.0.tgz"
+    },
+    "repeating": {
+      "version": "2.0.1",
+      "from": "repeating@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/repeating/-/repeating-2.0.1.tgz"
+    },
+    "request": {
+      "version": "2.82.0",
+      "from": "request@>=2.65.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/request/-/request-2.82.0.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@>=1.0.0 <2.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/assert-plus/-/assert-plus-1.0.0.tgz"
+        },
+        "boom": {
+          "version": "4.3.1",
+          "from": "boom@>=4.0.0 <5.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/boom/-/boom-4.3.1.tgz"
+        },
+        "cryptiles": {
+          "version": "3.1.2",
+          "from": "cryptiles@>=3.0.0 <4.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/cryptiles/-/cryptiles-3.1.2.tgz",
+          "dependencies": {
+            "boom": {
+              "version": "5.2.0",
+              "from": "boom@>=5.0.0 <6.0.0",
+              "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/boom/-/boom-5.2.0.tgz"
+            }
+          }
+        },
+        "hawk": {
+          "version": "6.0.2",
+          "from": "hawk@>=6.0.2 <6.1.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/hawk/-/hawk-6.0.2.tgz"
+        },
+        "hoek": {
+          "version": "4.2.0",
+          "from": "hoek@>=4.0.0 <5.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/hoek/-/hoek-4.2.0.tgz"
+        },
+        "http-signature": {
+          "version": "1.2.0",
+          "from": "http-signature@>=1.2.0 <1.3.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/http-signature/-/http-signature-1.2.0.tgz"
+        },
+        "performance-now": {
+          "version": "2.1.0",
+          "from": "performance-now@>=2.1.0 <3.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/performance-now/-/performance-now-2.1.0.tgz"
+        },
+        "qs": {
+          "version": "6.5.1",
+          "from": "qs@>=6.5.1 <6.6.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/qs/-/qs-6.5.1.tgz"
+        },
+        "sntp": {
+          "version": "2.0.2",
+          "from": "sntp@>=2.0.0 <3.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/sntp/-/sntp-2.0.2.tgz"
+        }
+      }
+    },
+    "rimraf": {
+      "version": "2.6.2",
+      "from": "rimraf@>=2.5.4 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/rimraf/-/rimraf-2.6.2.tgz"
+    },
+    "rotating-file-stream": {
+      "version": "1.3.2",
+      "from": "rotating-file-stream@>=1.2.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/rotating-file-stream/-/rotating-file-stream-1.3.2.tgz"
+    },
+    "router": {
+      "version": "1.3.2",
+      "from": "router@>=1.1.4 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/router/-/router-1.3.2.tgz",
+      "dependencies": {
+        "setprototypeof": {
+          "version": "1.1.0",
+          "from": "setprototypeof@1.1.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/setprototypeof/-/setprototypeof-1.1.0.tgz"
+        }
+      }
+    },
+    "rule-generator": {
+      "version": "3.1.14",
+      "from": "rule-generator@prerelease",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/rule-generator/-/rule-generator-3.1.14.tgz"
+    },
+    "safe-buffer": {
+      "version": "5.1.1",
+      "from": "safe-buffer@>=5.0.1 <6.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/safe-buffer/-/safe-buffer-5.1.1.tgz"
+    },
+    "sax": {
+      "version": "1.1.5",
+      "from": "sax@1.1.5",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/sax/-/sax-1.1.5.tgz"
+    },
+    "semver": {
+      "version": "5.4.1",
+      "from": "semver@>=5.0.3 <6.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/semver/-/semver-5.4.1.tgz"
+    },
+    "send": {
+      "version": "0.15.6",
+      "from": "send@0.15.6",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/send/-/send-0.15.6.tgz"
+    },
+    "sequencify": {
+      "version": "0.0.7",
+      "from": "sequencify@>=0.0.7 <0.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/sequencify/-/sequencify-0.0.7.tgz"
+    },
+    "serve-static": {
+      "version": "1.12.6",
+      "from": "serve-static@>=1.10.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/serve-static/-/serve-static-1.12.6.tgz"
+    },
+    "setprototypeof": {
+      "version": "1.0.3",
+      "from": "setprototypeof@1.0.3",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/setprototypeof/-/setprototypeof-1.0.3.tgz"
+    },
+    "signal-exit": {
+      "version": "3.0.2",
+      "from": "signal-exit@>=3.0.0 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/signal-exit/-/signal-exit-3.0.2.tgz"
+    },
+    "single-line-log": {
+      "version": "1.1.2",
+      "from": "single-line-log@>=1.1.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/single-line-log/-/single-line-log-1.1.2.tgz"
+    },
+    "sntp": {
+      "version": "1.0.9",
+      "from": "sntp@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/sntp/-/sntp-1.0.9.tgz"
+    },
+    "source-map": {
+      "version": "0.1.31",
+      "from": "source-map@0.1.31",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/source-map/-/source-map-0.1.31.tgz"
+    },
+    "spdx-correct": {
+      "version": "1.0.2",
+      "from": "spdx-correct@>=1.0.0 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/spdx-correct/-/spdx-correct-1.0.2.tgz"
+    },
+    "spdx-expression-parse": {
+      "version": "1.0.4",
+      "from": "spdx-expression-parse@>=1.0.0 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/spdx-expression-parse/-/spdx-expression-parse-1.0.4.tgz"
+    },
+    "spdx-license-ids": {
+      "version": "1.2.2",
+      "from": "spdx-license-ids@>=1.0.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/spdx-license-ids/-/spdx-license-ids-1.2.2.tgz"
+    },
+    "speedometer": {
+      "version": "1.0.0",
+      "from": "speedometer@>=1.0.0 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/speedometer/-/speedometer-1.0.0.tgz"
+    },
+    "sshpk": {
+      "version": "1.13.1",
+      "from": "sshpk@>=1.7.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/sshpk/-/sshpk-1.13.1.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@>=1.0.0 <2.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/assert-plus/-/assert-plus-1.0.0.tgz"
+        }
+      }
+    },
+    "stats-js": {
+      "version": "1.0.0-alpha1",
+      "from": "stats-js@1.0.0-alpha1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/stats-js/-/stats-js-1.0.0-alpha1.tgz"
+    },
+    "statuses": {
+      "version": "1.3.1",
+      "from": "statuses@>=1.3.1 <1.4.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/statuses/-/statuses-1.3.1.tgz"
+    },
+    "stream-consume": {
+      "version": "0.1.0",
+      "from": "stream-consume@>=0.1.0 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/stream-consume/-/stream-consume-0.1.0.tgz"
+    },
+    "stream-meter": {
+      "version": "1.0.4",
+      "from": "stream-meter@>=1.0.3 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/stream-meter/-/stream-meter-1.0.4.tgz",
+      "dependencies": {
+        "readable-stream": {
+          "version": "2.3.3",
+          "from": "readable-stream@>=2.1.4 <3.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/readable-stream/-/readable-stream-2.3.3.tgz"
+        },
+        "string_decoder": {
+          "version": "1.0.3",
+          "from": "string_decoder@>=1.0.3 <1.1.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/string_decoder/-/string_decoder-1.0.3.tgz"
+        }
+      }
+    },
+    "stream-to": {
+      "version": "0.2.2",
+      "from": "stream-to@>=0.2.0 <0.3.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/stream-to/-/stream-to-0.2.2.tgz"
+    },
+    "stream-to-buffer": {
+      "version": "0.1.0",
+      "from": "stream-to-buffer@>=0.1.0 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/stream-to-buffer/-/stream-to-buffer-0.1.0.tgz"
+    },
+    "string_decoder": {
+      "version": "0.10.31",
+      "from": "string_decoder@>=0.10.0 <0.11.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/string_decoder/-/string_decoder-0.10.31.tgz"
+    },
+    "string-width": {
+      "version": "1.0.2",
+      "from": "string-width@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/string-width/-/string-width-1.0.2.tgz"
+    },
+    "stringstream": {
+      "version": "0.0.5",
+      "from": "stringstream@>=0.0.4 <0.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/stringstream/-/stringstream-0.0.5.tgz"
+    },
+    "strip-ansi": {
+      "version": "3.0.1",
+      "from": "strip-ansi@>=3.0.0 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/strip-ansi/-/strip-ansi-3.0.1.tgz"
+    },
+    "strip-bom": {
+      "version": "2.0.0",
+      "from": "strip-bom@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/strip-bom/-/strip-bom-2.0.0.tgz"
+    },
+    "strip-indent": {
+      "version": "1.0.1",
+      "from": "strip-indent@>=1.0.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/strip-indent/-/strip-indent-1.0.1.tgz"
+    },
+    "supports-color": {
+      "version": "2.0.0",
+      "from": "supports-color@>=2.0.0 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/supports-color/-/supports-color-2.0.0.tgz"
+    },
+    "syslog-client": {
+      "version": "1.1.1",
+      "from": "syslog-client@>=1.1.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/syslog-client/-/syslog-client-1.1.1.tgz"
+    },
+    "tar-fs": {
+      "version": "1.15.3",
+      "from": "tar-fs@>=1.8.1 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/tar-fs/-/tar-fs-1.15.3.tgz"
+    },
+    "tar-stream": {
+      "version": "1.5.4",
+      "from": "tar-stream@>=1.1.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/tar-stream/-/tar-stream-1.5.4.tgz",
+      "dependencies": {
+        "readable-stream": {
+          "version": "2.3.3",
+          "from": "readable-stream@>=2.0.0 <3.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/readable-stream/-/readable-stream-2.3.3.tgz"
+        },
+        "string_decoder": {
+          "version": "1.0.3",
+          "from": "string_decoder@>=1.0.3 <1.1.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/string_decoder/-/string_decoder-1.0.3.tgz"
+        }
+      }
+    },
+    "tcp-proxy": {
+      "version": "0.0.1",
+      "from": "tcp-proxy@0.0.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/tcp-proxy/-/tcp-proxy-0.0.1.tgz",
+      "dependencies": {
+        "uuid": {
+          "version": "1.4.2",
+          "from": "uuid@>=1.4.1 <1.5.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/uuid/-/uuid-1.4.2.tgz"
+        }
+      }
+    },
+    "three": {
+      "version": "0.70.1",
+      "from": "three@0.70.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/three/-/three-0.70.1.tgz"
+    },
+    "throttleit": {
+      "version": "0.0.2",
+      "from": "throttleit@0.0.2",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/throttleit/-/throttleit-0.0.2.tgz"
+    },
+    "through": {
+      "version": "2.3.8",
+      "from": "through@>=2.3.4 <2.4.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/through/-/through-2.3.8.tgz"
+    },
+    "through2": {
+      "version": "0.6.5",
+      "from": "through2@>=0.6.5 <0.7.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/through2/-/through2-0.6.5.tgz"
+    },
+    "tinycolor2": {
+      "version": "1.4.1",
+      "from": "tinycolor2@>=1.1.2 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/tinycolor2/-/tinycolor2-1.4.1.tgz"
+    },
+    "tough-cookie": {
+      "version": "2.3.3",
+      "from": "tough-cookie@>=2.3.2 <2.4.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/tough-cookie/-/tough-cookie-2.3.3.tgz",
+      "dependencies": {
+        "punycode": {
+          "version": "1.4.1",
+          "from": "punycode@>=1.4.1 <2.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/punycode/-/punycode-1.4.1.tgz"
+        }
+      }
+    },
+    "trim": {
+      "version": "0.0.1",
+      "from": "trim@0.0.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/trim/-/trim-0.0.1.tgz"
+    },
+    "trim-newlines": {
+      "version": "1.0.0",
+      "from": "trim-newlines@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/trim-newlines/-/trim-newlines-1.0.0.tgz"
+    },
+    "tunnel-agent": {
+      "version": "0.6.0",
+      "from": "tunnel-agent@>=0.6.0 <0.7.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/tunnel-agent/-/tunnel-agent-0.6.0.tgz"
+    },
+    "tweetnacl": {
+      "version": "0.14.5",
+      "from": "tweetnacl@>=0.14.0 <0.15.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/tweetnacl/-/tweetnacl-0.14.5.tgz"
+    },
+    "type-is": {
+      "version": "1.6.15",
+      "from": "type-is@>=1.6.15 <1.7.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/type-is/-/type-is-1.6.15.tgz"
+    },
+    "typedarray": {
+      "version": "0.0.6",
+      "from": "typedarray@>=0.0.6 <0.0.7",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/typedarray/-/typedarray-0.0.6.tgz"
+    },
+    "typedarray-to-buffer": {
+      "version": "3.0.5",
+      "from": "typedarray-to-buffer@>=3.0.3 <3.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/typedarray-to-buffer/-/typedarray-to-buffer-3.0.5.tgz"
+    },
+    "ultron": {
+      "version": "1.1.0",
+      "from": "ultron@>=1.1.0 <1.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ultron/-/ultron-1.1.0.tgz"
+    },
+    "underscore": {
+      "version": "1.4.4",
+      "from": "underscore@>=1.4.4 <1.5.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/underscore/-/underscore-1.4.4.tgz"
+    },
+    "universalify": {
+      "version": "0.1.1",
+      "from": "universalify@>=0.1.0 <0.2.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/universalify/-/universalify-0.1.1.tgz"
+    },
+    "unpipe": {
+      "version": "1.0.0",
+      "from": "unpipe@>=1.0.0 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/unpipe/-/unpipe-1.0.0.tgz"
+    },
+    "unreachable-branch-transform": {
+      "version": "0.3.0",
+      "from": "unreachable-branch-transform@>=0.3.0 <0.4.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/unreachable-branch-transform/-/unreachable-branch-transform-0.3.0.tgz"
+    },
+    "urijs": {
+      "version": "1.17.1",
+      "from": "urijs@1.17.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/urijs/-/urijs-1.17.1.tgz"
+    },
+    "url": {
+      "version": "0.10.3",
+      "from": "url@0.10.3",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/url/-/url-0.10.3.tgz"
+    },
+    "url-regex": {
+      "version": "3.2.0",
+      "from": "url-regex@>=3.0.0 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/url-regex/-/url-regex-3.2.0.tgz"
+    },
+    "util-deprecate": {
+      "version": "1.0.2",
+      "from": "util-deprecate@>=1.0.1 <1.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/util-deprecate/-/util-deprecate-1.0.2.tgz"
+    },
+    "utils-merge": {
+      "version": "1.0.1",
+      "from": "utils-merge@1.0.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/utils-merge/-/utils-merge-1.0.1.tgz"
+    },
+    "uuid": {
+      "version": "3.1.0",
+      "from": "uuid@>=3.0.1 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/uuid/-/uuid-3.1.0.tgz"
+    },
+    "validate-npm-package-license": {
+      "version": "3.0.1",
+      "from": "validate-npm-package-license@>=3.0.1 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/validate-npm-package-license/-/validate-npm-package-license-3.0.1.tgz"
+    },
+    "verror": {
+      "version": "1.10.0",
+      "from": "verror@1.10.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/verror/-/verror-1.10.0.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@>=1.0.0 <2.0.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/assert-plus/-/assert-plus-1.0.0.tgz"
+        }
+      }
+    },
+    "websocket-without-native": {
+      "version": "1.0.23",
+      "from": "websocket-without-native@>=1.0.23 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/websocket-without-native/-/websocket-without-native-1.0.23.tgz",
+      "dependencies": {
+        "debug": {
+          "version": "2.2.0",
+          "from": "debug@>=2.2.0 <2.3.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/debug/-/debug-2.2.0.tgz"
+        },
+        "ms": {
+          "version": "0.7.1",
+          "from": "ms@0.7.1",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ms/-/ms-0.7.1.tgz"
+        }
+      }
+    },
+    "wrappy": {
+      "version": "1.0.2",
+      "from": "wrappy@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/wrappy/-/wrappy-1.0.2.tgz"
+    },
+    "ws": {
+      "version": "3.2.0",
+      "from": "ws@>=3.0.0 <4.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/ws/-/ws-3.2.0.tgz"
+    },
+    "x11": {
+      "version": "2.2.1",
+      "from": "git+https://git@github.com/andrewstart/node-x11.git",
+      "resolved": "git+https://git@github.com/andrewstart/node-x11.git#da262fcb8d12a45bad930cfdf070a0b14e85cdc8"
+    },
+    "xhr": {
+      "version": "2.4.0",
+      "from": "xhr@>=2.0.1 <3.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/xhr/-/xhr-2.4.0.tgz"
+    },
+    "xml-parse-from-string": {
+      "version": "1.0.1",
+      "from": "xml-parse-from-string@>=1.0.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/xml-parse-from-string/-/xml-parse-from-string-1.0.1.tgz"
+    },
+    "xml2js": {
+      "version": "0.4.15",
+      "from": "xml2js@0.4.15",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/xml2js/-/xml2js-0.4.15.tgz"
+    },
+    "xmlbuilder": {
+      "version": "2.6.2",
+      "from": "xmlbuilder@2.6.2",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/xmlbuilder/-/xmlbuilder-2.6.2.tgz",
+      "dependencies": {
+        "lodash": {
+          "version": "3.5.0",
+          "from": "lodash@>=3.5.0 <3.6.0",
+          "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/lodash/-/lodash-3.5.0.tgz"
+        }
+      }
+    },
+    "xmlhttprequest": {
+      "version": "1.8.0",
+      "from": "xmlhttprequest@>=1.8.0 <2.0.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/xmlhttprequest/-/xmlhttprequest-1.8.0.tgz"
+    },
+    "xtend": {
+      "version": "4.0.1",
+      "from": "xtend@>=4.0.0 <4.1.0-0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/xtend/-/xtend-4.0.1.tgz"
+    },
+    "yaeti": {
+      "version": "0.0.6",
+      "from": "yaeti@>=0.0.4 <0.1.0",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/yaeti/-/yaeti-0.0.6.tgz"
+    },
+    "yauzl": {
+      "version": "2.4.1",
+      "from": "yauzl@2.4.1",
+      "resolved": "https://jiborobot.jfrog.io/jiborobot/api/npm/npm-partners-virtual/yauzl/-/yauzl-2.4.1.tgz"
+    }
+  }
+}
